@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Hugster - My Licenses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand">Hugster.net</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="license.html" class="active">Licenses</a>
+            <a href="#">Analytics</a>
+            <a href="#">Settings</a>
+        </nav>
+    </div>
+
+    <main class="content">
+        <header>
+            <h2>My Licenses</h2>
+        </header>
+
+        <table class="license-table">
+            <thead>
+                <tr>
+                    <th>PRODUCT</th>
+                    <th>LICENSE KEY</th>
+                    <th>USAGE</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody id="license-data"></tbody>
+        </table>
+    </main>
+
+    <script>
+        const data = [
+            { "plugin": "DonutCore", "license": "ABCD-1234-EFGH-5678", "valid": "true", "usage": "670" },
+            { "plugin": "Crates", "license": "68C0B-22D90-B24XN-Y6RPY-KOI36", "valid": "true", "usage": "407" }
+        ];
+
+        const container = document.getElementById('license-data');
+        data.forEach(item => {
+            container.innerHTML += `
+                <tr>
+                    <td><strong>${item.plugin}</strong></td>
+                    <td><code class="key-box">${item.license}</code></td>
+                    <td>${item.usage}</td>
+                    <td><span class="status-tag">Active</span></td>
+                    <td><button class="manage-btn">Manage</button></td>
+                </tr>
+            `;
+        });
+    </script>
+</body>
+</html>
