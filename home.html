@@ -3,66 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hugster - Dashboard</title>
+    <title>Licenses - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="sidebar">
-        <div class="brand">Hugster.net</div>
+        <div class="brand">Licenses</div>
         <nav>
             <a href="home.html" class="active">Home</a>
-            <a href="license.html">Licenses</a>
-            <a href="#">Analytics</a>
-            <a href="#">Settings</a>
+            <a href="license.html">My Licenses</a>
         </nav>
         <div class="sidebar-footer">
-            <button onclick="logout()">Logout</button>
+            <button onclick="logout()" class="logout-btn">Logout</button>
         </div>
     </div>
 
     <main class="content">
         <header>
-            <div class="header-left">
-                <h2>Overview</h2>
-                <span>Welcome back, user</span>
-            </div>
+            <h2>Home</h2>
             <img src="https://i.imgur.com/7YV5V9p.png" class="avatar">
         </header>
-
-        <section class="banner">
-            <p class="label">Overview</p>
-            <h1>You've handled 1077 requests across all your plugins.</h1>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 75%;"></div>
-            </div>
-        </section>
-
-        <div class="stats-grid">
-            <div class="stat-card">
-                <p>Active Licenses</p>
-                <h3>2</h3>
-            </div>
-            <div class="stat-card">
-                <p>Most Active</p>
-                <h3>DonutCore</h3>
-            </div>
-        </div>
-
-        <h3>Recent Activity</h3>
-        <div class="activity-list">
-            <div class="activity-item">
-                <div class="indicator blue"></div>
-                <div class="activity-info">
-                    <strong>DonutCore</strong>
-                    <span>Connected from 84.216.166.143</span>
-                </div>
-                <span class="time">Just now</span>
-            </div>
+        <div class="empty-state">
+            <p>Welcome to your license dashboard.</p>
         </div>
     </main>
 
     <script>
-        if(sessionStorage.getItem("loggedIn") !== "true") window.location.href = "login.html";
+        if(sessionStorage.getItem("auth") !== "ZGFzaHN0dWRpbzIwMjYyMDE0") window.location.href = "login.html";
         function logout() { sessionStorage.clear(); window.location.href = "login.html"; }
     </script>
 </body>
