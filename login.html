@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hugster Licenses - Login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="login-body">
     <div class="login-container">
         <img src="https://i.imgur.com/8nN6hH3.png" alt="Logo" class="logo-img">
-        <h1>Hugster Licenses</h1>
-        <p>Manage your licenses with ease.</p>
-        <button id="loginBtn" class="btn-primary">Login with Discord</button>
-        <span class="secure-text">Secure authentication via Discord OAuth2</span>
+        <h1>Licenses</h1>
+        <p>Enter your access key to continue</p>
+        <input type="password" id="passInput" placeholder="Access Key" class="login-input">
+        <button id="loginBtn" class="btn-primary">Login</button>
+        <p id="error" style="color: #ff4d4d; margin-top: 10px; font-size: 14px; display: none;">Invalid Key</p>
     </div>
     <script>
+        const hash = "ZGFzaHN0dWRpbzIwMjYyMDE0";
         document.getElementById("loginBtn").onclick = () => {
-            sessionStorage.setItem("loggedIn", "true");
-            window.location.href = "home.html";
+            const val = document.getElementById("passInput").value;
+            if (btoa(val) === hash) {
+                sessionStorage.setItem("auth", hash);
+                window.location.href = "home.html";
+            } else {
+                document.getElementById("error").style.display = "block";
+            }
         };
     </script>
 </body>
