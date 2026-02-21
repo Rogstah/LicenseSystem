@@ -1,5 +1,14 @@
-{
-  "plugin": "DonutCore",
-  "license": "ABCD-1234-EFGH-5678",
-  "valid": "true"
-}
+[
+  {
+    "plugin": "DonutCore",
+    "license": "ABCD-1234-EFGH-5678",
+    "usage": "670",
+    "valid": "true"
+  },
+  {
+    "plugin": "Crates",
+    "license": "68C0B-22D90-B24XN-Y6RPY-KOI36",
+    "usage": "407",
+    "valid": "true"
+  }
+]
