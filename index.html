@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "login.html";
+        } else {
+            window.location.href = "home.html";
+        }
+    </script>
+</head>
+<body style="background: #000;"></body>
+</html>
